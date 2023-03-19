@@ -1,8 +1,8 @@
 const {Router} = require("express");
-const {getTypeHandler} = require('./typeHandler/typeHanlder')
-
+const { getDBTypes, getTypes} = require('../controllers/typeControllers')
 const typeRouter = Router();
 
-typeRouter.get('/', getTypeHandler)
+typeRouter.get('/', getTypes) //Cargar los tipos
+typeRouter.get('/find', getDBTypes) //traerlos
 
 module.exports = typeRouter;
